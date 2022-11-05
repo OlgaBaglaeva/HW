@@ -1,25 +1,24 @@
-// Homework 2.4
+let date = new Date("November 5, 2022 18:51:30");
+let hour = date.getHours();
+console.log(hour);
 
-let base = 2;
-let exp = 8;
-let res = 1;
 
-for (let i = 0; i < exp; i+=1) {
-    res = res * base;
-}
-console.log(res);
+let hour = 14;
+let say = "";
 
-// Homework 2.3
-
-let result = "";
-let length = 7;
-
-for (let i = 1; i < length; i++) { 
-
-    for (j = 0; j < i; j++) {
-        result += "*";
+    if (hour < 5) {
+        say = "Доброй ночи";
     }
-
-    result += "\n";
-    } 
-console.log(result);
+        else if (hour < 11) {
+        say = "Доброе утро";
+    }
+        else if (hour < 17) {
+            say = "Добрый день";
+    }
+        else if (hour < 22) {
+            say = "Добрый вечер";
+        }
+    else {
+        say = "Доброй ночи";
+    }
+    console.log(say);
