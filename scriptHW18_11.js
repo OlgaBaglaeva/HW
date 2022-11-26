@@ -26,17 +26,19 @@ substrCount("Good Golly Miss Molly", "11", 7, 10);
 
 // 5.3
 
-let str = "";
 function StrPad(input, fullLen, fillStr, fillType) {
-   str = input.padEnd(fullLen, fillStr);
    switch(fillType) {
-       case 'FILL_LEFT': return  str + input;
-       case 'FILL_BOTH': return  input + str + input;
-       default: return str; 
+       case 'FILL_LEFT': return  input.padStart(fullLen, fillStr);
+       case 'FILL_BOTH': return  input.padStart(fullLen, fillStr).padEnd(fullLen, fillStr);
+       default: return input.padEnd(fullLen, fillStr); 
 }
 }
-console.log(str);
-StrPad('start', 20, '_*_', 'FILL_LEFT'); 
+console.log(StrPad('start', 10, '_*_'));
+console.log(StrPad('start', 8, '_*_', 'FILL_LEFT'));
+console.log(StrPad('start', 8, '*', 'FILL_BOTH')); 
+
+
+
 
 
 
