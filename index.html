@@ -29,27 +29,25 @@ name = 'Это я его открыло!';
 let wnd; /* НОВОЕ ОКНО! */
 
 function openWnd(wnd) {
-	wnd = window.open("", "", "width=300, height=200, top="+((screen.height-200)/2)+",left="+((screen.width-300)/2)+"");
-	wnd.focus();
+	wnd = window.open("", "", "width=300, height=200, top="+((screen.height-200)/2)+",left="+((screen.width-300)/2)+"")
+	wnd.focus()
 
 }
 
 function writeToDocument() {
 	let html = "<html>" + 
-	"<style>" + 
-	"</style>" + 
+	"<style>background: #369; color: #fff; font: 16px calibri, sans-serif;</style>" + 
 	"<script>alert(opener.name);<\/script>" + 
 	"<body>" + 
 	"<p>Текст параграфа</p>" + 
 	"</body>" + 
 	"</html>"
-	wnd.document.write(html);
-	wnd.document.write("<style> html { background: #369; color: #fff; font: 16px calibri, sans-serif } </style>")
+	wnd.document.write(html)
 }
 
 function closeWnd() {
 	if (wnd.opener && !wnd.opener.closed) {
-		wnd.close();
+		wnd.close()
 	}
 }
 </script>
